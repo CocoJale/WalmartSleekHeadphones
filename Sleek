@@ -18,6 +18,12 @@ for i = 1, 200 do
 end
  end)
 
+Tab1:CreateButton("CollectCoinsV2", function(value)
+for i=1,200 
+do game:GetService("ReplicatedStorage").Remotes.CollectCoinEvent:FireServer(i) end wait(1) local P,T=game:GetService("Players"),game:GetService("TeleportService") local pId,JId=game.PlaceId,game.JobId if#P:GetPlayers()<=1 then P.LocalPlayer:Kick("\nwait/Espera 1s rejoin") wait(1) T:Teleport(pId,P.LocalPlayer) else T:TeleportToPlaceInstance(pId,JId,P.LocalPlayer)
+end 
+ end)
+
 Tab1:CreateButton("AutoGlide", function(value)
 for i = 1, 50 do
 local args = {
