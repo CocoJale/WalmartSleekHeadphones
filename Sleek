@@ -1,0 +1,31 @@
+GameName = "Walmart"
+
+tab1name = "Main"
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local GameName = Library:NewWindow(GameName)
+
+local Tab1 = GameName:NewSection(tab1name)
+
+Tab1:CreateButton("Equip Cart First", function(value)
+print("hi")
+end)
+
+Tab1:CreateButton("CollectCoins", function(value)
+for i = 1, 200 do
+    game:GetService("ReplicatedStorage").Remotes.CollectCoinEvent:FireServer(i)
+end
+ end)
+
+Tab1:CreateButton("AutoGlide", function(value)
+for i = 1, 50 do
+local args = {
+    [1] = "Glide",
+    [2] = 271.2211608886719
+}
+
+game:GetService("ReplicatedStorage").Remotes.LogActivityEvent:FireServer(unpack(args))
+end
+ end)
+local Tab2 = GameName:NewSection("Cocojale")
